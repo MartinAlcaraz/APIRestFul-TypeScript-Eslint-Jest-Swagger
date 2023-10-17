@@ -1,0 +1,51 @@
+
+==TYPESCRIPT==
+npm i -D typescript @types/node @types/express
+
+npx tsc --init  // para iniciar el archivo de configuracion de typescript.
+
+
+==WEBPACK==
+npm i -D webpack  webpack-cli webpack-node-externals webpack-shell-plugin ts-loader
+
+webpack-cli   =>  // para ejecutar webpack desde la linea de comandos
+
+webpack-node-externals 
+
+webpack-shell-plugin  =>  // para hacer la configuracion de webpack
+
+
+==ESLINT==
+npm i -D eslint jest ts-jest @types/jest supertest ts-node @typescript-eslint/parser
+
+npx eslint --init   // para iniciar la configuracion de eslint
+
+
+
+==JEST==
+
+npx jest --init   // para iniciar la configuracion de jest
+
+En el archivo jest.congfig.ts descomentar la linea 
+coveragePathIgnorePatterns: [
+    "\\\\node_modules\\\\"
+],
+
+
+npm i -D serve  // para servir el archivo de reporte generado por JEST y poder ver el archivo en el navegador
+
+en package.json
+script{
+    "serve:coverage": "npm run test && cd coverage/lcov-report && npx serve"
+}
+al ejecutar "npm run serve:coverage"
+-1- se ejecuta el test  (npm run test)
+-2- se encuentra el archivo html del reporte (cd coverage/lcov-report)
+-3- se sirve en el navegador (npx serve)
+
+==Swagger==
+npm i -D @types/swagger-jsdoc @types/swagger-ui-express
+npm i swagger-jsdoc swagger-ui-express
+npm i tsoa
+
+tsoa => para usar swagger con typescript y poder documentar a travez de anotaciones de nuestro codigo. Genera un archivo json que contiene la documentacion.
